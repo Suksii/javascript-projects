@@ -9,13 +9,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom, #fbffe4, #a3d1c6, #fbffe4);
+  background: linear-gradient(to bottom, #a3d1c6, #fbffe4);
 }
 .container {
   width: 450px;
   border-radius: 8px;
   padding: 12px;
   background-color: aliceblue;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 .add-task {
   display: flex;
@@ -36,8 +37,18 @@ body {
   min-width: 100px;
   background-color: #a3d1c6;
   color: aliceblue;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 16px;
   border: 2px solid #a3d1c6;
   cursor: pointer;
+}
+.tasks {
+  margin-top: 45px;
+  width: 100%;
+}
+.task {
+  padding: 8px 10px;
+  background-color: #a3d1c6;
+  color: white;
+  font-size: 18px;
 }
