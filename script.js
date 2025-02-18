@@ -7,6 +7,11 @@ addTaskButton.addEventListener("click", () => {
     alert("Task must not be empty");
     // return;
   }
-  tasksContainer.innerHTML += `<div class="task"><p>${taskText}</p></div>`;
+  tasksContainer.innerHTML += `<div class="task">
+  <p>${taskText}</p>
+  <div class="delete-task">
+    <i class="fa fa-lg fa-square-minus"></i>
+  </div>
+  </div>`;
   addTaskInput.value = "";
 });

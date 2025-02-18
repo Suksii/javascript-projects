@@ -48,7 +48,14 @@ body {
 }
 .task {
   padding: 8px 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #a3d1c6;
   color: white;
   font-size: 18px;
+}
+.delete-task {
+  cursor: pointer;
 }
