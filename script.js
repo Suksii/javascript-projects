@@ -7,11 +7,19 @@ addTaskButton.addEventListener("click", () => {
     alert("Task must not be empty");
     return;
   }
-  tasksContainer.innerHTML += `<div class="task">
+  const task = document.createElement("div");
+  task.classList.add("task");
+  task.innerHTML = `
   <p>${taskText}</p>
   <div class="delete-task">
-    <i class="fa fa-lg fa-square-minus""></i>
-  </div>
+    <i class="fa fa-lg fa-square-minus delete-task-button"></i>
   </div>`;
+  tasksContainer.appendChild(task);
   addTaskInput.value = "";
+});
+
+document.addEventListener("click", function (event) {
+  if (event.target.classList.contains("delete-task-button")) {
+    event.target.closest(".task").remove();
+  }
 });
