@@ -9,7 +9,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom, #a3d1c6, #fbffe4);
+  background: linear-gradient(to bottom, #5ca08e, #f0f5c9);
 }
 .container {
   width: 450px;
@@ -26,21 +26,27 @@ body {
 .add-task input {
   padding: 8px 10px;
   width: 100%;
-  border: 2px solid #a3d1c6;
+  border: 2px solid #5ca08e;
   font-size: 16px;
 }
 .add-task input:focus {
   outline: none;
+  border: 2px solid #417f6c;
 }
 .add-task button {
   padding: 8px 10px;
   min-width: 100px;
-  background-color: #a3d1c6;
+  background-color: #5ca08e;
   color: aliceblue;
   font-weight: 600;
   font-size: 16px;
-  border: 2px solid #a3d1c6;
+  border: 2px solid #5ca08e;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.add-task button:hover {
+  background-color: #417f6c;
+  border-color: #417f6c;
 }
 .tasks {
   margin-top: 45px;
@@ -52,10 +58,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #a3d1c6;
+  background-color: #5ca08e;
   color: white;
   font-size: 18px;
 }
 .delete-task {
   cursor: pointer;
+  color: #ff6b6b;
+  transition: color 0.3s ease;
+}
+.delete-task:hover {
+  color: #ff2e2e;
 }

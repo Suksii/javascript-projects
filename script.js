@@ -5,12 +5,12 @@ addTaskButton.addEventListener("click", () => {
   const taskText = addTaskInput.value.trim();
   if (taskText === "") {
     alert("Task must not be empty");
-    // return;
+    return;
   }
   tasksContainer.innerHTML += `<div class="task">
   <p>${taskText}</p>
   <div class="delete-task">
-    <i class="fa fa-lg fa-square-minus"></i>
+    <i class="fa fa-lg fa-square-minus""></i>
   </div>
   </div>`;
   addTaskInput.value = "";
