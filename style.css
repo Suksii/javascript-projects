@@ -7,9 +7,16 @@ body {
   width: 100%;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: linear-gradient(to bottom, #5ca08e, #f0f5c9);
+}
+.title {
+  font-size: xx-large;
+  color: aliceblue;
+  text-transform: uppercase;
+  margin-bottom: 40px;
 }
 .container {
   width: 450px;
@@ -72,4 +79,8 @@ body {
 }
 .delete-task:hover {
   color: #ff2e2e;
+}
+.task-completed {
+  text-decoration: line-through;
+  opacity: 0.7;
 }

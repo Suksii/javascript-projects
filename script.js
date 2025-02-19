@@ -10,7 +10,7 @@ addTaskButton.addEventListener("click", () => {
   const task = document.createElement("div");
   task.classList.add("task");
   task.innerHTML = `
-  <p>${taskText}</p>
+  <p class="task-text">${taskText}</p>
   <div class="delete-task">
     <i class="fa fa-lg fa-square-minus delete-task-button"></i>
   </div>`;
@@ -21,5 +21,11 @@ addTaskButton.addEventListener("click", () => {
 document.addEventListener("click", function (event) {
   if (event.target.classList.contains("delete-task-button")) {
     event.target.closest(".task").remove();
+  }
+});
+
+document.addEventListener("click", function (event) {
+  if (event.target.classList.contains("task-text")) {
+    event.target.closest(".task").classList.toggle("task-completed");
   }
 });
