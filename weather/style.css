@@ -14,14 +14,17 @@ body {
   background-image: url("mountain.jpg");
   background-size: cover;
 }
-.image {
+#background {
   position: absolute;
   inset: 0;
   background-color: rgba(15, 60, 143, 0.2);
 }
 .container {
   width: 450px;
-  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
   background-color: #ffffff;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   z-index: 40;
@@ -52,7 +55,33 @@ body {
 .search button:hover {
   background-color: #2563eb;
 }
-
+.header {
+  text-align: center;
+}
+.weather {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+#weather-temperature {
+  font-size: 80px;
+  font-weight: bold;
+}
+#weather-type {
+  display: flex;
+  gap: 10px;
+}
+.weather-info {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  background-color: gray;
+  border-radius: 100px;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 40px;
+}
 @media (max-width: 768px) {
   .container {
     width: 100%;
