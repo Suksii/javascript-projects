@@ -69,8 +69,17 @@ body {
   font-weight: bold;
 }
 #weather-type {
+  position: absolute;
+  bottom: -10px;
+  text-wrap: nowrap;
+  width: 100%;
   display: flex;
   gap: 10px;
+  align-items: end;
+}
+#weather-type img {
+  z-index: 50;
+  scale: 1.7;
 }
 .weather-info {
   width: 90%;
