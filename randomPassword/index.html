@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <title>Generate random password</title>
+  </head>
+  <body>
+    <div>
+      <h1>Generate random password</h1>
+      <div class="container">
+        <div class="generated-password-content">
+          <h3>Generated password</h3>
+          <div class="generated-password">
+            <p>sditrepotjergkdf</p>
+            <i class="fa-regular fa-copy"></i>
+          </div>
+        </div>
+        <div class="password-length-content">
+          <p>Password length</p>
+          <div class="password-length">
+            <input type="range" min="6" max="12" />
+            <p id="length">33</p>
+          </div>
+        </div>
+        <button id="generate-password">Generate password</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
