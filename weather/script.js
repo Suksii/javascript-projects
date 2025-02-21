@@ -8,6 +8,9 @@ async function fetchWeather(searchedCity) {
   if (response.status === 400) {
     document.querySelector(".error-message").style.display = "block";
     document.querySelector(".weather-data").style.display = "none";
+    setTimeout(() => {
+      document.querySelector(".error-message").style.display = "none";
+    }, 4000);
   }
 
   if (searchedCity && response.status !== 400) {
