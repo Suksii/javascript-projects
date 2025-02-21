@@ -22,11 +22,10 @@ async function fetchWeather(searchedCity) {
     );
     document.querySelector("#weather-temperature").innerHTML =
       Math.round(data.current.temp_c) + "°";
-    document.querySelector("#humidity").innerHTML =
-      data.current.humidity + " %";
-    document.querySelector("#wind").innerHTML = data.current.wind_kph + " km/h";
+    document.querySelector("#humidity").innerHTML = data.current.humidity + "%";
+    document.querySelector("#wind").innerHTML = data.current.wind_kph + "km/h";
     document.querySelector("#dew-point").innerHTML =
-      data.current.dewpoint_c + " °";
+      data.current.dewpoint_c + "°";
     document.querySelector("#pressure").innerHTML =
       data.current.pressure_mb + "hPa";
 
@@ -53,8 +52,10 @@ async function fetchWeather(searchedCity) {
 const searchInput = document.querySelector(".search input");
 const searchButton = document.querySelector(".search button");
 
-searchButton.addEventListener("click", (e) => {
-  e.preventDefault();
+searchButton.addEventListener("click", () => {
+  if (searchInput.value.trim() === "") {
+    alert("Type a city name");
+  }
   fetchWeather(searchInput.value);
   searchInput.value = "";
 });

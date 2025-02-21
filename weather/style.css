@@ -5,58 +5,75 @@
 }
 
 body {
-  width: 100%;
   position: relative;
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-image: url("mountain.jpg");
   background-size: cover;
+  background-position: center;
 }
 #background {
   position: absolute;
   inset: 0;
-  background-color: rgba(15, 60, 143, 0.2);
+  background-color: rgba(15, 60, 143, 0.25);
 }
 .container {
   width: 450px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
   background-color: #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
   z-index: 40;
 }
 .search {
   width: 100%;
+  position: relative;
   display: flex;
   align-items: center;
 }
 .search input {
   width: 100%;
-  padding: 12px 6px;
-  background-color: #f3f4f6;
+  padding: 14px 16px;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.4);
   outline: none;
   border: none;
-}
-.search button {
-  padding: 12px 6px;
-  border: none;
-  background-color: #3b82f6;
-  min-width: 80px;
-  cursor: pointer;
   transition: background 0.3s ease-in-out;
 }
-.search button i {
+.search input:focus {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.search button {
+  position: absolute;
+  height: 90%;
+  aspect-ratio: 1/1;
+  right: 10px;
+  border: none;
+  background-color: #3b82f6;
   color: white;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s ease-in-out;
 }
 .search button:hover {
   background-color: #2563eb;
 }
 .header {
   text-align: center;
+}
+.header p {
+  color: #3d3d3d;
+  font-size: small;
+  font-weight: 500;
 }
 .weather {
   position: relative;
@@ -65,7 +82,7 @@ body {
   text-align: center;
 }
 #weather-temperature {
-  font-size: 80px;
+  font-size: 72px;
   font-weight: bold;
 }
 #weather-type {
@@ -79,22 +96,30 @@ body {
 }
 #weather-type img {
   z-index: 50;
-  scale: 1.7;
+  scale: 1.5;
+}
+#weather-type p {
+  color: #3d3d3d;
+  font-size: small;
+  font-weight: 500;
 }
 .weather-info {
-  width: 90%;
   display: flex;
+  width: 100%;
   justify-content: space-between;
-  background-color: gray;
+  background-color: rgba(255, 255, 255, 0.4);
   border-radius: 100px;
   text-align: center;
   padding: 15px 35px;
-  margin-bottom: 40px;
 }
 .info {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+.info p {
+  color: #3d3d3d;
+  font-size: small;
 }
 @media (max-width: 768px) {
   .container {
