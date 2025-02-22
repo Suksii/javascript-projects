@@ -7,6 +7,11 @@ function generateRandomPassword() {
     const letterIndex = Math.floor(Math.random(...letters) * letters.length);
     password.push(letters[letterIndex]);
   }
+  document.querySelector(".generated-password").innerHTML = password.join("");
   return password.join("");
 }
-generateRandomPassword();
+const generatePassword = document.querySelector("#generate-password");
+
+generatePassword.addEventListener("click", () => {
+  generateRandomPassword();
+});
