@@ -1,17 +1,22 @@
-function generateRandomPassword() {
+function generateRandomPassword(passwordLength) {
   const letters = "abcdefghigkelmopqrstuxyz".split("");
 
   const password = [];
 
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < passwordLength; i++) {
     const letterIndex = Math.floor(Math.random(...letters) * letters.length);
     password.push(letters[letterIndex]);
   }
   document.querySelector(".generated-password").innerHTML = password.join("");
   return password.join("");
 }
-const generatePassword = document.querySelector("#generate-password");
+const generatePasswordButton = document.querySelector("#generate-password");
+const passwordLengthInput = document.querySelector(".password-length input");
+const passwordLengthValue = document.querySelector("#length");
 
-generatePassword.addEventListener("click", () => {
-  generateRandomPassword();
+passwordLengthInput.addEventListener("input", () => {
+  passwordLengthValue.innerHTML = passwordLengthInput.value;
+});
+generatePasswordButton.addEventListener("click", () => {
+  generateRandomPassword(passwordLengthInput.value);
 });
