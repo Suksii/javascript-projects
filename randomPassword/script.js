@@ -14,6 +14,8 @@ const generatePasswordButton = document.querySelector("#generate-password");
 const passwordLengthInput = document.querySelector(".password-length input");
 const passwordLengthValue = document.querySelector("#length");
 
+passwordLengthValue.textContent = passwordLengthInput.value;
+
 passwordLengthInput.addEventListener("input", () => {
   passwordLengthValue.innerHTML = passwordLengthInput.value;
 });
