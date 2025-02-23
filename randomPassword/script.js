@@ -7,7 +7,7 @@ function generateRandomPassword(passwordLength) {
     const letterIndex = Math.floor(Math.random(...letters) * letters.length);
     password.push(letters[letterIndex]);
   }
-  document.querySelector(".generated-password").innerHTML = password.join("");
+  document.querySelector(".generated-password p").innerHTML = password.join("");
   return password.join("");
 }
 const generatePasswordButton = document.querySelector("#generate-password");
@@ -20,3 +20,19 @@ passwordLengthInput.addEventListener("input", () => {
 generatePasswordButton.addEventListener("click", () => {
   generateRandomPassword(passwordLengthInput.value);
 });
+
+document
+  .querySelector(".generated-password i")
+  .addEventListener("click", () => {
+    const generatedPassword = document.querySelector(
+      ".generated-password p"
+    ).textContent;
+    navigator.clipboard
+      .writeText(generatedPassword)
+      .then(() => {
+        alert("Password copied successfully");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
