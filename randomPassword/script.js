@@ -1,7 +1,29 @@
 function generateRandomPassword(passwordLength) {
-  const letters = "abcdefghigkelmopqrstuxyz".split("");
+  const lowerCaseLetters = "abcdefghigkelmopqrstuvwxyz";
+  const upperCaseLetters = "ABCDEFGHIGKLMNOPQRSTUVWXYZ";
+  const numbers = "0123456789";
+  const symbols = "!@#$%^&*()-_+=<>?";
 
   const password = [];
+
+  var letters = "";
+  const lowerCaseChecked = document.querySelector("#lowercase-letters").checked;
+  const upperCaseChecked = document.querySelector("#uppercase-letters").checked;
+  const numbersChecked = document.querySelector("#numbers").checked;
+  const symbolsChecked = document.querySelector("#symbols").checked;
+
+  if (lowerCaseChecked) {
+    letters += lowerCaseLetters;
+  }
+  if (upperCaseChecked) {
+    letters += upperCaseLetters;
+  }
+  if (symbolsChecked) {
+    letters += symbols;
+  }
+  if (numbersChecked) {
+    letters += numbers;
+  }
 
   for (let i = 0; i < passwordLength; i++) {
     const letterIndex = Math.floor(Math.random(...letters) * letters.length);
@@ -10,6 +32,7 @@ function generateRandomPassword(passwordLength) {
   document.querySelector(".generated-password p").innerHTML = password.join("");
   return password.join("");
 }
+
 const generatePasswordButton = document.querySelector("#generate-password");
 const passwordLengthInput = document.querySelector(".password-length input");
 const passwordLengthValue = document.querySelector("#length");
