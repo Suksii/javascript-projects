@@ -27,10 +27,10 @@ function generateRandomPassword(passwordLength) {
 
   if (letters.length === 0) {
     alert("Please select at least one option");
-    return;
+    return "";
   }
   for (let i = 0; i < passwordLength; i++) {
-    const letterIndex = Math.floor(Math.random(...letters) * letters.length);
+    const letterIndex = Math.floor(Math.random() * letters.length);
     password.push(letters[letterIndex]);
   }
   document.querySelector(".generated-password p").textContent =
@@ -48,6 +48,8 @@ passwordLengthInput.addEventListener("input", () => {
   passwordLengthValue.innerHTML = passwordLengthInput.value;
 });
 generatePasswordButton.addEventListener("click", () => {
+  const message = document.querySelector(".generated-password span");
+  if (message) message.remove();
   generateRandomPassword(passwordLengthInput.value);
 });
 
@@ -57,6 +59,10 @@ document
     const generatedPassword = document.querySelector(
       ".generated-password p"
     ).textContent;
+    if (generatedPassword.length === 0) {
+      alert("You cannot copy empty field");
+      return;
+    }
     navigator.clipboard
       .writeText(generatedPassword)
       .then(() => {
