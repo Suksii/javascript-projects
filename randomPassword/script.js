@@ -24,12 +24,12 @@ function generateRandomPassword(passwordLength) {
   if (numbersChecked) {
     letters += numbers;
   }
-
   for (let i = 0; i < passwordLength; i++) {
     const letterIndex = Math.floor(Math.random(...letters) * letters.length);
     password.push(letters[letterIndex]);
   }
-  document.querySelector(".generated-password p").innerHTML = password.join("");
+  document.querySelector(".generated-password p").textContent =
+    password.join("");
   return password.join("");
 }
 
