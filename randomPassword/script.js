@@ -24,6 +24,11 @@ function generateRandomPassword(passwordLength) {
   if (numbersChecked) {
     letters += numbers;
   }
+
+  if (letters.length === 0) {
+    alert("Please select at least one option");
+    return;
+  }
   for (let i = 0; i < passwordLength; i++) {
     const letterIndex = Math.floor(Math.random(...letters) * letters.length);
     password.push(letters[letterIndex]);
