@@ -1,6 +1,7 @@
 function ageCalculator() {
   const currentDate = new Date();
   const selectedDate = document.querySelector(".container input").value;
+  const result = document.querySelector("#age");
 
   if (!selectedDate) {
     alert("You must select a date");
@@ -34,6 +35,7 @@ function ageCalculator() {
     newMonth -= 1;
   }
   console.log(newDay, newMonth, newYear);
+  result.innerHTML = `You are <span>${newYear}</span> years, <span>${newMonth}</span> months and <span>${newDay}</span> days old`;
 }
 
 const calculateButton = document.querySelector("#button-calculate");
