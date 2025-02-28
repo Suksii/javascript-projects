@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  background-color: #00879E;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  background-color: black;
+  color: #0ff;
+  width: 180px;
+  padding: 18px;
+  font-size: 16px;
+  border: 2px solid #0ff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 2px #0ff;
+}
+
+button:hover {
+  box-shadow: 0 0 10px #0ff;
+}

@@ -38,7 +38,8 @@ body {
 #error {
   color: red;
 }
-.container button {
+.container button,
+a {
   width: 100%;
   padding: 10px 8px;
   border: none;
@@ -59,6 +60,12 @@ body {
 .show-img {
   height: 300px;
 }
-.container button:hover {
+.container button:hover,
+a:hover {
   transform: translateY(-3px);
+}
+.download-buttons {
+  display: flex;
+  gap: 4px;
+  margin: 25px 0;
 }
