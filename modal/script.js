@@ -1,11 +1,14 @@
 const modalContainer = document.querySelector(".modal-container");
-const closeModal = document.querySelector(".close-modal");
-const openModal = document.querySelector(".show-modal");
+const modal = document.querySelector(".modal");
+const closeModalButton = document.querySelector(".close-modal-button");
+const showModalButton = document.querySelector(".show-modal-button");
 
-openModal.addEventListener("click", () => {
-  modalContainer.style.display = "flex";
+showModalButton.addEventListener("click", () => {
+  modalContainer.classList.add("open-modal");
+  modal.style.transform = "scale(1)";
 });
 
-closeModal.addEventListener("click", () => {
-  modalContainer.style.display = "none";
+closeModalButton.addEventListener("click", () => {
+  modalContainer.classList.remove("open-modal");
+  modal.style.transform = "scale(0.3)";
 });
